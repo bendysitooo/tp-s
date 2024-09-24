@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+using namespace std;
+class Empleado {
+public:
+    string nombre;
+    float salario;
+    string departamento;
+
+    void ingresarDatos() {
+        cout << "Nombre: " << endl;
+        cin >> nombre;
+        cout << "Salario: " << endl;
+        cin >> salario;
+        cout << "Departamento: " << endl;
+        cin >> departamento;
+    }
+};
+
+bool compararPorSalario(const Empleado& e1, const Empleado& e2) {
+    return e1.salario > e2.salario;
+}
+
+int main() {
+    vector<Empleado> empleados;
+    int numEmpleados;
+
+    cout << "Ingrese el número de empleados: " << endl;
+    cin >> numEmpleados;
+
+    for (int i = 0; i < numEmpleados; ++i) {
+        Empleado e;
+        e.ingresarDatos();
+        empleados.push_back(e);
+    }
+
+    sort(empleados.begin(), empleados.end(), compararPorSalario);
+
+    cout << "\nDatos de los empleados ordenados por salario:" << endl;
+    for (const auto& e : empleados) {
+        cout << "Nombre: " << e.nombre << endl << "Salario: " << e.salario << endl 
+                  << "Departamento: " << e.departamento << endl;
+    }
+
+    return 0;
+}
