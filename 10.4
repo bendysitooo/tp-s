@@ -1,0 +1,86 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+class CuentaBancaria {
+public:
+    string numeroCuenta;
+    string titular;
+    float saldo;
+
+    void ingresarDatos() {
+        cout << "Número de cuenta: " << endl;
+        cin >> numeroCuenta;
+        cout << "Nombre del titular: " << endl;
+        cin >> titular;
+        cout << "Saldo inicial: " << endl;
+        cin >> saldo;
+    }
+
+    void depositar(float cantidad) {
+        saldo += cantidad;
+    }
+
+    void retirar(float cantidad) {
+        if (cantidad <= saldo) {
+            saldo -= cantidad;
+        } else {
+            cout << "Fondos insuficientes.";
+        }
+    }
+
+    void mostrarDatos() const {
+      cout << "Número de cuenta: " << numeroCuenta << endl
+                  << "Titular: " << titular << endl
+                  << "Saldo: " << saldo << endl;
+    }
+};
+
+int main() {
+   vector<CuentaBancaria> cuentas;
+    int numCuentas;
+
+    cout << "Ingrese el número de cuentas bancarias: " << endl;
+    cin >> numCuentas;
+
+    for (int i = 0; i < numCuentas; ++i) {
+        CuentaBancaria c;
+        c.ingresarDatos();
+        cuentas.push_back(c);
+    }
+
+    int opcion;
+    do {
+        cout << "\nSeleccione una opción:\n1. Depositar\n2. Retirar\n3. Mostrar cuentas\n4. Salir\n";
+       cin >> opcion;
+
+        if (opcion == 1 || opcion == 2) {
+            string cuentaSeleccionada;
+            cout << "Ingrese el número de cuenta: " << endl;
+            cin >> cuentaSeleccionada;
+
+            for (auto& c : cuentas) {
+                if (c.numeroCuenta == cuentaSeleccionada) {
+                    float cantidad;
+                    if (opcion == 1) {
+                        cout << "Cantidad a depositar: " << endl;
+                        cin >> cantidad;
+                        c.depositar(cantidad);
+                    } else {
+                        cout << "Cantidad a retirar: " << endl;
+                        cin >> cantidad;
+                        c.retirar(cantidad);
+                    }
+                    break;
+                }
+            }
+        } else if (opcion == 3) {
+            for (const auto& c : cuentas) {
+                c.mostrarDatos();
+            }
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
