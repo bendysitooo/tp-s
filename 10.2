@@ -9,9 +9,9 @@ public:
     int edad;
 
     void ingresarDatos() {
-        cout << "Nombre: ";
+        cout << "Nombre: "<< endl;
         cin >> nombre;
-        cout << "Edad: ";
+        cout << "Edad: "<< endl;
         cin >> edad;
     }
 };
@@ -24,7 +24,7 @@ int main() {
     vector<Persona> personas;
     int numPersonas;
 
-    cout << "Ingrese el número de personas: ";
+    cout << "Ingrese el número de personas: " << endl;
     cin >> numPersonas;
 
     for (int i = 0; i < numPersonas; ++i) {
@@ -33,11 +33,11 @@ int main() {
         personas.push_back(p);
     }
 
-    std::sort(personas.begin(), personas.end(), compararPorEdad);
+    sort(personas.begin(), personas.end(), compararPorEdad);
 
-    cout << "\nDatos de las personas ordenadas por edad:\n";
+    cout << endl << "Datos de las personas ordenadas por edad:"<< endl << endl;
     for (const auto& p : personas) {
-        cout << "Nombre: " << p.nombre << ", Edad: " << p.edad << endl;
+        cout << "Nombre: " << p.nombre<< endl << ", Edad: " << p.edad << endl;
     }
 
     return 0;
