@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+using namespace std;
+class Persona {
+public:
+    string nombre;
+    int edad;
+
+    void ingresarDatos() {
+        cout << "Nombre: ";
+        cin >> nombre;
+        cout << "Edad: ";
+        cin >> edad;
+    }
+};
+
+bool compararPorEdad(const Persona& p1, const Persona& p2) {
+    return p1.edad < p2.edad;
+}
+
+int main() {
+    vector<Persona> personas;
+    int numPersonas;
+
+    cout << "Ingrese el número de personas: ";
+    cin >> numPersonas;
+
+    for (int i = 0; i < numPersonas; ++i) {
+        Persona p;
+        p.ingresarDatos();
+        personas.push_back(p);
+    }
+
+    std::sort(personas.begin(), personas.end(), compararPorEdad);
+
+    cout << "\nDatos de las personas ordenadas por edad:\n";
+    for (const auto& p : personas) {
+        cout << "Nombre: " << p.nombre << ", Edad: " << p.edad << endl;
+    }
+
+    return 0;
+}
