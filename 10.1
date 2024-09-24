@@ -1,37 +1,34 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+using namespace std;
 class Alumno {
 public:
     std::string nombre;
     float nota1, nota2, nota3;
 
     void ingresarDatos() {
-        std::cout << "Nombre: ";
-        std::cin >> nombre;
-        std::cout << "Nota 1: ";
-        std::cin >> nota1;
-        std::cout << "Nota 2: ";
-        std::cin >> nota2;
-        std::cout << "Nota 3: ";
-        std::cin >> nota3;
+        cout << "Nombre: ";
+        cin >> nombre;
+        cout << "Nota 1: ";
+        cin >> nota1;
+        cout << "Nota 2: ";
+        cin >> nota2;
+        cout << "Nota 3: ";
+        cin >> nota3;
     }
 
     void mostrarDatos() const {
-        std::cout << "Nombre: " << nombre 
-                  << ", Nota 1: " << nota1 
-                  << ", Nota 2: " << nota2 
-                  << ", Nota 3: " << nota3 << std::endl;
+        cout << "Nombre: " << nombre << ", Nota 1: " << nota1 << ", Nota 2: " << nota2 << ", Nota 3: " << nota3 << endl;
     }
 };
 
 int main() {
-    std::vector<Alumno> alumnos;
+    vector<Alumno> alumnos;
     int numAlumnos;
 
-    std::cout << "Ingrese el número de alumnos: ";
-    std::cin >> numAlumnos;
+    cout << "Ingrese el número de alumnos: ";
+    cin >> numAlumnos;
 
     for (int i = 0; i < numAlumnos; ++i) {
         Alumno a;
@@ -39,7 +36,7 @@ int main() {
         alumnos.push_back(a);
     }
 
-    std::cout << "\nDatos de los alumnos:\n";
+    cout << "\n Datos de los alumnos:\n";
     for (const auto& a : alumnos) {
         a.mostrarDatos();
     }
