@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+class Rectangulo {
+public:
+    float base, altura;
+
+    void ingresarDatos() {
+        cout << "Base: ";
+        cin >> base;
+        cout << "Altura: ";
+        cin >> altura;
+    }
+
+    float area() const {
+        return base * altura;
+    }
+
+    float perimetro() const {
+        return 2 * (base + altura);
+    }
+};
+
+int main() {
+    vector<Rectangulo> rectangulos;
+    int numRectangulos;
+
+   cout << "Ingrese el numero de rectangulos: ";
+   cin >> numRectangulos;
+
+    for (int i = 0; i < numRectangulos; ++i) {
+        Rectangulo r;
+        r.ingresarDatos();
+        rectangulos.push_back(r);
+    }
+
+   cout << "\n Area y perímetro de los rectangulos:\n";
+    for (const auto& r : rectangulos) {
+        cout << "Area: " << r.area() << ", Perimetro: " << r.perimetro() << endl;
+    }
+
+    return 0;
+}
