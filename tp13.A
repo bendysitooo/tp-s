@@ -1,0 +1,27 @@
+1.
+La herencia es un mecanismo que permite crear nuevas clases (clases derivadas) a partir de clases existentes (clases base). Su principal objetivo es promover la reutilización de código y establecer una relación jerárquica entre las clases. Esto permite que las clases derivadas hereden atributos y métodos de la clase base, facilitando la creación de nuevas funcionalidades sin duplicar el código.
+
+2.
+La encapsulación es fundamental en la herencia porque define cómo se accede a los atributos y métodos de la clase base desde la clase derivada. Ayuda a proteger la integridad de los datos y a restringir el acceso a los componentes internos de una clase. Al encapsular, se puede controlar qué partes de la clase base son accesibles para las clases derivadas, asegurando que solo se utilicen los métodos y atributos necesarios.
+
+3.
+public: Los miembros de la clase base que son públicos son accesibles desde cualquier parte del programa, incluyendo las clases derivadas y otras clases. Esta es la forma más abierta de acceso.
+
+protected: Los miembros protegidos son accesibles solo dentro de la clase base y las clases derivadas. Esto permite que las clases derivadas utilicen estos miembros, pero no son accesibles desde otras clases o instancias.
+
+private: Los miembros privados de la clase base no son accesibles desde ninguna clase derivada. Esto significa que no se pueden utilizar directamente en las clases que heredan de la clase base, aunque aún se pueden acceder mediante métodos públicos o protegidos de la clase base.
+
+4.
+La especialización se refiere al proceso mediante el cual una clase derivada extiende o modifica el comportamiento de la clase base. Esto se puede lograr mediante la adición de nuevos métodos, la modificación de métodos existentes (sobrecarga) o la redefinición de métodos de la clase base (sobreescritura). La especialización permite a las clases derivadas ser más específicas en su comportamiento y en sus atributos.
+
+5.
+Ventajas:
+
+Reutilización de código: Permite a las clases derivadas aprovechar el código existente de múltiples clases base.
+Flexibilidad: Las clases pueden heredar de varias fuentes, lo que permite crear combinaciones más complejas de comportamiento.
+Organización: Facilita la organización de clases en jerarquías más lógicas y específicas.
+Posibles problemas:
+
+Ambigüedad: Si dos clases base tienen un método o atributo con el mismo nombre, puede resultar confuso para el compilador saber a cuál de ellos se refiere la clase derivada. Este problema se conoce como "Diamond Problem".
+Complejidad: La herencia múltiple puede hacer que el diseño de clases sea más complicado y difícil de entender, aumentando la dificultad para mantener el código.
+Mayor acoplamiento: Las clases derivadas pueden volverse demasiado dependientes de las implementaciones específicas de las clases base, lo que puede dificultar el cambio y la reutilización del código.
