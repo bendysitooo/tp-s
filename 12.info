@@ -1,0 +1,71 @@
+
+Aquí tienes un resumen de los conceptos que mencionas:
+
+1.
+Los modificadores de acceso controlan la visibilidad de los atributos y métodos en una clase. En C++, hay tres modificadores de acceso:
+
+public: Accesibles desde cualquier parte del programa.
+private: Accesibles solo desde dentro de la propia clase.
+protected: Accesibles desde la propia clase y desde las clases derivadas.
+Se utilizan para encapsular datos y proteger la integridad de los mismos.
+
+2.
+Un constructor es un método especial que se llama automáticamente al crear un objeto de una clase. Su propósito es inicializar los atributos del objeto. En C++, se define con el mismo nombre que la clase y sin tipo de retorno
+class MiClase {
+public:
+    MiClase() {
+        // Inicialización
+    }
+};
+3.
+Un destructor es un método que se llama automáticamente cuando un objeto es destruido. Su propósito es liberar recursos o realizar tareas de limpieza. En C++, se define con el mismo nombre que la clase precedido por un tilde (~)
+class MiClase {
+public:
+    ~MiClase() {
+        // Limpieza
+    }
+};
+4. Partes private y public de una clase
+En C++, la parte public de una clase define lo que es accesible desde fuera, mientras que la parte private restringe el acceso solo a la propia clase. Esto permite controlar la visibilidad y la manipulación de los atributos.
+class MiClase {
+private:
+    int atributoPrivado;
+public:
+    void metodoPublico() {
+        // Código
+    }
+};
+5. Sobrecarga de métodos
+La sobrecarga de métodos permite definir múltiples métodos con el mismo nombre pero con diferentes parámetros. Su propósito es mejorar la legibilidad y la funcionalidad. Se implementa definiendo métodos con el mismo nombre pero con diferentes tipos o números de argumentos
+class MiClase {
+public:
+    void metodo(int a) { /*...*/ }
+    void metodo(double b) { /*...*/ }
+};
+6. Colaboración de clases
+La colaboración de clases se refiere a cómo diferentes clases trabajan juntas para realizar tareas. Se implementa mediante la creación de instancias de una clase dentro de otra y la comunicación entre ellas.
+class ClaseA {
+    // ...
+};
+
+class ClaseB {
+    ClaseA a; // ClaseB colabora con ClaseA
+};
+7. Herencia
+La herencia es un mecanismo que permite crear nuevas clases basadas en clases existentes, facilitando la reutilización de código. Hay varios tipos de herencia, como:
+
+Herencia simple
+Herencia múltiple
+Herencia jerárquica
+Ventajas incluyen la reutilización de código y la creación de una jerarquía de clases; desventajas pueden incluir complejidad y problemas de ambigüedad.
+
+Se implementa con el uso de la palabra clave public, protected o private
+class Base {
+    // ...
+};
+
+class Derivada : public Base {
+    // ...
+};
+8. Diferencia entre colaboración y herencia
+La colaboración se refiere a la interacción entre clases para lograr un objetivo común, mientras que la herencia se refiere a una relación "es un tipo de", donde una clase derivada hereda atributos y métodos de una clase base. La colaboración permite una relación más flexible, mientras que la herencia establece una jerarquía de clases.
