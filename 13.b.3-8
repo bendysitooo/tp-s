@@ -1,0 +1,17 @@
+3.
+El nombre de la clase padre en la jerarquía es Persona.
+
+4.
+Las clases que heredan de la clase Persona son Empleado y Estudiante.
+
+5.
+La relación entre las clases Estudiante y Tecnico es que Tecnico hereda de Estudiante. Esto significa que Tecnico es un tipo específico de Estudiante.
+
+6.
+El propósito del constructor de Empleado es inicializar un objeto Empleado con un nombre, edad y sueldo específicos. Utiliza el constructor de la clase base Persona para establecer los atributos nombre y edad, y luego inicializa el atributo sueldo.
+
+7.
+El propósito del método mostrarPersona() es mostrar en la consola los atributos nombre y edad de un objeto de la clase Persona. Este método se utiliza también en las clases derivadas para mostrar la información básica de la persona.
+
+8.
+El método utilizado para mostrar el salario del empleado es mostrarEmpleado(), que a su vez llama al método mostrarPersona() para mostrar el nombre y la edad, seguido de la impresión del sueldo.
